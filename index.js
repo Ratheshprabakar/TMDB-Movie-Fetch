@@ -1,8 +1,12 @@
 const API_KEY ='5d0af19e9233d2aabfd882b55afd5e1f';
 const URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key='+API_KEY
 const IMG_URL = 'https://image.tmdb.org/t/p/w500'
+const searchURL =  'https://api.themoviedb.org/3/search/movie?api_key='+API_KEY;
+
 
 const main = document.getElementById("main");
+const search = document.getElementById("search");
+
 
 
 getMovies(URL);
@@ -41,3 +45,15 @@ function showMovies(data){
         }
     });
 }
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const searchTerm = search.value;
+    if(searchTerm) {
+        getMovies(searchURL+'&query='+searchTerm)
+    }else{
+        getMovies(API_URL);
+    }
+
+})

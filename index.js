@@ -1,4 +1,4 @@
-const API_KEY ='5d0af19e9233d2aabfd882b55afd5e1f';
+const API_KEY ='YOUR_TMDB_API_KEY';
 const URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key='+API_KEY
 const IMG_URL = 'https://image.tmdb.org/t/p/w500'
 const searchURL =  'https://api.themoviedb.org/3/search/movie?api_key='+API_KEY;
@@ -45,7 +45,6 @@ function showMovies(data){
         }
     });
 }
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -57,3 +56,4 @@ form.addEventListener('submit', (e) => {
     }
 
 })
+
